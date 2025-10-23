@@ -1,13 +1,22 @@
-﻿.DS_Store
+﻿# Sistema / editor
+.DS_Store
 Thumbs.db
 *.log
+
+# Node / builds
 node_modules/
 .next/
 dist/
 build/
 coverage/
+
+# Entornos y secretos locales
 .env
 .env.*
+*.pem
+*.key
+
+# Vercel y otros
 .vercel/
 .vscode/
 *.zip
