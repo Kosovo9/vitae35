@@ -1,0 +1,15 @@
+{
+  "name": "vitae35",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "",
+    "vercel-build": ""
+  },
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}

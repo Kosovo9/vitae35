@@ -1,0 +1,9 @@
+﻿User-agent: *
+Disallow: /api/
+Crawl-delay: 10
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: MJ12bot
+Disallow: /

@@ -1,0 +1,30 @@
+﻿# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Node
+node_modules/
+npm-debug.log*
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+
+# Build / cache
+.next/
+dist/
+build/
+coverage/
+
+# Env y secretos locales
+.env
+.env.*
+*.pem
+*.key
+
+# Vercel y artefactos
+.vercel/
+*.zip
+
+# Misc
+.vscode/

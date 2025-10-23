@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="IA + ciencia para transformar cuerpo y salud después de los 35. Planes personalizados, pagos locales y coaching 24/7." />
+  <title>Vitae35 | Transformación Premium 35+</title>
+  <link rel="stylesheet" href="/style.css" />
+  <!-- Load public env values (no secrets) -->
+  <script src="/api/env"></script>
+  <!-- Clerk JS (uses publishable key from /api/env) -->
+  <script async crossorigin src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest"></script>
+</head>
+<body>
+  <!-- Loading -->
+  <div id="loading-screen">
+    <div class="loader"></div>
+    <div class="loading-text">Inicializando Vitae35…</div>
+  </div>
+
+  <!-- Header -->
+  <header id="header">
+    <nav class="navbar" aria-label="Main">
+      <a href="#home" class="logo">
+        <div class="logo-icon">V+</div> Vitae35
+      </a>
+
+      <ul class="nav-links">
+        <li><a id="nav-home" class="nav-link" href="#home">Inicio</a></li>
+        <li><a id="nav-services" class="nav-link" href="#services">Servicios</a></li>
+        <li><a id="nav-pricing" class="nav-link" href="#pricing">Planes</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <select id="lang-select" class="lang-select" aria-label="Language">
+          <option value="es">ES</option><option value="en">EN</option><option value="pt">PT</option>
+          <option value="fr">FR</option><option value="de">DE</option><option value="it">IT</option>
+          <option value="nl">NL</option><option value="sv">SV</option><option value="no">NO</option>
+          <option value="da">DA</option><option value="fi">FI</option><option value="pl">PL</option>
+          <option value="tr">TR</option><option value="ar">AR</option><option value="hi">HI</option>
+        </select>
+        <button id="clerk-auth" class="btn btn-outline">Acceder</button>
+        <button class="mobile-menu" aria-label="Menú móvil" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="globe" aria-hidden="true"><div class="globe-core"></div><div class="globe-grid"></div></div>
+      <div class="hero-content">
+        <div id="hero-badge" class="hero-badge">✨ Oferta Fundador Exclusiva ✨</div>
+        <h1 id="hero-title">El Fin de los Planes Genéricos. <span class="highlight">Tu Transformación Comienza Hoy.</span></h1>
+        <p id="hero-subtitle">Acceso de por vida a la plataforma de IA #1 para 35+. Un pago: nutrición + entrenamiento 100% personalizado.</p>
+        <div class="hero-actions">
+          <a href="#pricing" class="btn btn-gold"><span id="cta-main-text">Obtener Acceso Fundador</span><span>→</span></a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><div class="stat-number">&lt;12h</div><div id="stat-label-1" class="stat-label">Primer cliente</div></div>
+          <div class="stat"><div class="stat-number">10</div><div id="stat-label-2" class="stat-label">Cupos fundador</div></div>
+          <div class="stat"><div class="stat-number">100%</div><div id="stat-label-3" class="stat-label">Garantía</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-title">
+          <h2 id="services-title">Un Ecosistema, no solo una App</h2>
+          <p id="services-subtitle">IA que construye tu plan a partir de tus datos y ajusta semanalmente.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card"><div class="service-icon">🍽️</div><h3>Nutrición Metabólica</h3><p>Menús personalizados por metabolismo y objetivos.</p></div>
+          <div class="service-card"><div class="service-icon">💪</div><h3>Entrenamiento Inteligente</h3><p>Rutinas de fuerza/HIIT con énfasis anti-lesión.</p></div>
+          <div class="service-card"><div class="service-icon">📊</div><h3>Progreso & Ajustes</h3><p>Dashboard con métricas + auto-ajustes.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section section-dark" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="section-title">
+          <h2 id="pricing-title">Planes</h2>
+          <p id="pricing-subtitle">Elige tu nivel. Pagos seguros.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <header class="plan-header">
+              <h3 class="plan-name">Starter</h3>
+              <div class="plan-price">$499 MXN</div>
+              <div class="plan-period">Pago único fundador</div>
+            </header>
+            <ul class="plan-features">
+              <li><span class="feature-check">✓</span>Plan de nutrición básico por IA</li>
+              <li><span class="feature-check">✓</span>Rutina mensual autogestionada</li>
+              <li><span class="feature-check">✓</span>App y recetas esenciales</li>
+            </ul>
+            <button class="btn select-plan" data-plan="starter">Elegir Starter</button>
+          </article>
+
+          <article class="pricing-card featured">
+            <div class="plan-badge">POPULAR</div>
+            <header class="plan-header">
+              <h3 class="plan-name">Pro</h3>
+              <div class="plan-price">$1,299 MXN</div>
+              <div class="plan-period">Mensual</div>
+            </header>
+            <ul class="plan-features">
+              <li><span class="feature-check">✓</span>Todo Starter + ajustes semanales</li>
+              <li><span class="feature-check">✓</span>Soporte por chat 24/7</li>
+              <li><span class="feature-check">✓</span>Programas en casa y gimnasio</li>
+            </ul>
+            <button class="btn select-plan" data-plan="pro">Elegir Pro</button>
+          </article>
+
+          <article class="pricing-card">
+            <header class="plan-header">
+              <h3 class="plan-name">Elite</h3>
+              <div class="plan-price">$3,999 MXN</div>
+              <div class="plan-period">Mensual</div>
+            </header>
+            <ul class="plan-features">
+              <li><span class="feature-check">✓</span>Coach dedicado y videollamadas</li>
+              <li><span class="feature-check">✓</span>Ajustes diarios si aplica</li>
+              <li><span class="feature-check">✓</span>Suplementación personalizada</li>
+            </ul>
+            <button class="btn select-plan" data-plan="elite">Elegir Elite</button>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- AI Assistant Button -->
+  <button class="ai-assistant" id="ai-assistant-btn" aria-label="Asistente de IA">
+    <svg class="ai-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 5.5V7H9V5.5L3 7V9L9 10.5V12H15V10.5L21 9ZM15 19H9V21H15V19ZM12 14C13.1 14 14 14.9 14 16C14 17.1 13.1 18 12 18C10.9 18 10 17.1 10 16C10 14.9 10.9 14 12 14Z" fill="white"/>
+    </svg>
+  </button>
+
+  <!-- Onboarding Modal -->
+  <div id="onboarding-modal" class="modal-container" style="display:none;">
+    <div class="modal-content">
+      <button class="modal-close-btn" aria-label="Cerrar">&times;</button>
+      <h3 id="modal-title">Tu acceso</h3>
+      <p id="modal-subtitle">Deja tu email y te llevamos al pago seguro.</p>
+      <form id="onboarding-form">
+        <input type="email" id="email-input" placeholder="Tu mejor correo" required />
+        <button type="submit" id="modal-submit-btn" class="btn">Continuar</button>
+      </form>
+      <p class="modal-note" id="modal-note">Usamos Stripe. No guardamos tarjetas.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Vitae35. <span id="footer-rights">Todos los derechos reservados.</span></p>
+      <p id="footer-disclaimer">Consulta a tu médico antes de iniciar. Resultados varían.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/script.js"></script>
+</body>
+</html>

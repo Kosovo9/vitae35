@@ -1,0 +1,3 @@
+﻿Contact: mailto:security@vitae35.com
+Policy: https://vitae35.com/security
+Preferred-Languages: en,es
