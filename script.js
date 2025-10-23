@@ -1,3 +1,20 @@
+// --- Anti-clon/anti-scrape allowlist de orígenes ---
+(function () {
+  try {
+    const h = window.location.hostname;
+    const ok =
+      h === "vitae35.vercel.app" ||                       // dominio canónico
+      (h.endsWith(".vercel.app") && h.startsWith("vitae35-")) || // alias de Vercel para este proyecto
+      h === "localhost" || h === "127.0.0.1";
+    if (!ok) {
+      document.documentElement.innerHTML =
+        "<style>html,body{height:100%;margin:0}body{background:#0b1020;color:#fff;display:grid;place-items:center;font:600 20px system-ui}</style>Access restricted";
+      throw new Error("Blocked origin: " + h);
+    }
+  } catch (e) {
+    console.warn(e);
+  }
+})();
 // Vitae35 unified front — Clerk + Supabase + Payment Links + HF Chat
 document.addEventListener('DOMContentLoaded', () => {
   // Loading
